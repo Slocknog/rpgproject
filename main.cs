@@ -18,12 +18,11 @@ namespace GameMain
     }
     public class MainMenu
     {
+        Character CurrentPlayer = new Character();
         public void Menu()
         {
             Music MusicPlayer = new Music();
-            Character CurrentPlayer = new Character();
             LocationEngine Location = new LocationEngine();
-            Tester Testman = new Tester();
             MusicPlayer.Track("0");
             while (true)
             {
@@ -39,7 +38,7 @@ namespace GameMain
                     }
                     else if (MenuSelection == "play")
                     {
-                        if (CurrentPlayer.CharacterPass == "")
+                        if (CurrentPlayer.CharacterPass != "")
                         {
                             Console.Write("\r\nEnter your password: ");
                             string Password = Console.ReadLine();
@@ -88,13 +87,6 @@ namespace GameMain
 
 
             }
-        }
-    }
-    public class Tester
-    {
-        public void Testlord()
-        {
-            
         }
     }
 }
